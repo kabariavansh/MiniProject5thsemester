@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/57425a5200.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="/chatbox/static/css/chat.css">
+    <link rel="stylesheet" href="/chatbox/static/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>One_Note</title>
+</head>
+<body>
+    <div class="tool-icon">
+        <i class="fa-solid fa-bars-staggered"></i>
+    </div>
+    <div class="tools animation-tools">
+       <img class="pencil" src="pencil.jpg" >
+       <img class="erasor" src="erasor.jpg" >
+       <img class="upload" src="upload.jpg">
+       <img src="video.jpg" class="video">
+       <img src="videorec.jpg" class="rec">
+       <img class="notes" src="notes.jpg">
+       <img class="download" src="download.jpg">
+       <img class="undo" src="undo.jpg">
+       <img class="redo" src="redo.jpg">
+       <img src="switch.jpg" class="switch">
+       
+       
+    </div>
+    <div class="pencil-tool-cont">
+        <div class="pencil-width-cont">
+            <input class="pencil-width" type="range" min="2" max="10" value="3">
+        </div>
+           <div class="pencil-color-cont">
+            <div class="yellow pencil-color"></div>
+           <div class="black pencil-color"></div>
+           <div class="blue pencil-color"></div>
+           <div class="red pencil-color"></div>
+        </div>
+    </div>
+    <div class="erasor-tool-cont">
+       <input class="erasor-width" type="range" min="2" max="10" value="3" >
+    </div>
+    <!-- <div id="vidiv">
+
+    </div> -->
+    <!-- <div class="notes-cont">
+        <div class="header-cont">
+            <div class="min"></div>
+            <div class="remove"></div>
+        </div>
+        <div class="note-cont">
+            <textarea ></textarea>
+        </div>
+    </div> -->
+
+    
+<div class="scrollcontainer">
+    <canvas class="mycanvas" height="4000px" width="4100px"></canvas>
+</div>
+    <!-- CHAT BAR BLOCK -->
+    <div class="chat-bar-collapsible">
+        <button id="chat-button" type="button" class="collapsible">chatbox
+            <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+        </button>
+
+        <div class="content">
+            <div class="full-chat-block">
+                <!-- Message Container -->
+                <div class="outer-container">
+                    <div class="chat-container">
+                        <!-- Messages -->
+                        <div id="chatbox">
+                            <h5 id="chat-timestamp"></h5>
+                            <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                        </div>
+
+                        <!-- User input box -->
+                        <div class="chat-bar-input-block">
+                            <div id="userInput">
+                                <input id="textInput" class="input-box" type="text" name="msg"
+                                    placeholder="Tap 'Enter' to send a message">
+                                <p></p>
+                            </div>
+
+                            <div class="chat-bar-icons">
+                                <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                    onclick="heartButton()"></i>
+                                <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                    onclick="sendButton()"></i>
+                            </div>
+                        </div>
+
+                        <div id="chat-bar-bottom">
+                            <p></p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/chatbox/static/scripts/responses.js"></script>
+<script src="/chatbox/static/scripts/chat.js"></script>
+
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+    <script>
+        let socket=io.connect("http://localhost:6993");
+    </script>
+    <script src="./tool.js"></script>
+    <script src="./graphics.js"></script>
+</body>
+</html>
